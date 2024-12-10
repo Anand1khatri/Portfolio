@@ -1,0 +1,348 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url('../images/karthik-swarnkar-AoNvwL-Dmtw-unsplash.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    line-height: 1.6;
+    transition: all 0.5s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInLeft {
+    0% { opacity: 0; transform: translateX(-20px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.navbar .logo {
+    font-size: 2.2em;
+    color: #fff;
+    font-weight: 700;
+}
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links li {
+    position: relative;
+}
+
+.navbar .nav-links li a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .nav-links li a:hover {
+    background-color: #f0f0f0;
+    color: #333;
+    transform: translateY(-5px);
+}
+
+.navbar .nav-links li a::before {
+    content: '\f00c'; /* FontAwesome check icon for task-like appearance */
+    font-family: FontAwesome;
+    margin-right: 10px;
+}
+.navbar .nav-links li a.active {
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+}
+.navbar .nav-links li a.active::before {
+    content: '\f0a3'; /* FontAwesome active task icon */
+}
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar .nav-links li a {
+        text-align: center;
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    z-index: 1;
+    animation: slideUp 1.2s ease-in-out;
+}
+
+.hero-text h2 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.hero-image {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: zoomIn 1.5s ease-in-out;
+    
+}
+
+.hero-image img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid #fff;
+}
+
+/* Section Headings */
+h2 {
+    animation: slideUp 1s ease-in-out;
+}
+
+/* About Section */
+.about-section {
+    padding: 50px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-align: center;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    animation: fadeIn 1.5s ease-in-out;
+
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1em;
+
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Education Section */
+.education-section {
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+.education-section h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 2.5em;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+.education-item {
+    position: relative;
+    margin-bottom: 2em;
+    padding-left: 40px;
+    animation: fadeInLeft 1.5s ease-in-out;
+}
+
+.education-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.3em;
+}
+
+.education-item::before {
+    content: '\f0c0'; /* Font Awesome icon */
+    font-family: FontAwesome;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.5em;
+    color: #f0f0f0;
+}
+
+/* Certifications Section */
+.certifications-section {
+    padding: 50px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.certifications-section ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.certifications-section li {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    list-style: none;
+    font-size: 1.2em;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.certifications-section li:hover {
+    transform: translateY(-10px);
+}
+
+/* Activities Section */
+.activities-section {
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+}
+
+.activities-section h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 2.5em;
+}
+
+.activities-card {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 0 auto;
+    max-width: 600px;
+    animation: zoomIn 1.2s ease-in-out;
+}
+
+.activities-section p {
+    font-size: 1.2em;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 50px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-image {
+        position: static;
+        transform: translateY(0);
+        margin-top: 20px;
+    }
+
+    .skills-grid, .project-grid, .certifications-section ul {
+        grid-template-columns: 1fr;
+    }
+
+    .activities-card {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h2 {
+        font-size: 2em;
+    }
+
+    .hero-text p {
+        font-size: 0.9em;
+    }
+
+    .education-item {
+        padding-left: 30px;
+    }
+
+    .education-item::before {
+        font-size: 1.2em;
+    }
+}
